@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="csrf-token" content="<%= csrfToken %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      const token = document
+        .querySelector("meta[name='csrf-token']")
+        .getAttribute("content");
+    </script>
+  </head>
+  <body>
+    <div class="grid grid-cols-6">
+      <div class="col-span-2 col-start-3">
+        <%- include("head.ejs") %>
+
+        <div>
+            <% if(messages && messages.error && messages.error.length > 0)  { %>
+          <% for(var i=0; i<messages.error.length; i++) { %>
+            <li class="mb-2 text-rose-500"> <%= messages.error[i] %></li>
+          <% } %>
+        <% } %>
+          </div>
+          <div>
+            <a href="/poll" class="underline text-xl underline-offset-1 text-blue-600 justify-center">Go back</a>
+          </div>
+
+        <form action="/poll/<%=id %>/voters" method="post" class="mb-3">
+          <input type="hidden" name="_csrf" value="<%=csrfToken%>" />
+          <div class="flex gap-2">
+            <div class="flex-auto">
+              <input
+                type="text"
+                name="voterid"
+                placeholder="ENTER VOTER ID"
+                class="rounded border-2 border-gray-900 w-full p-2 text-sm"
+              />
+            </div>
+            <div class="flex-auto">
+              <input
+                name="Password"
+                type="password"
+                placeholder="Enter password "
+                class="rounded border-2 border-gray-900 w-full p-2 text-sm leading-4"
+              />
+            </div>
+            <div class="flex-none">
+              <input
+                type="submit"
+                value="Add"
+                class="text-white bg-green-600 px-5 rounded py-2 font-medium mr-2 mb-2"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div>
+        <%- include("data2.ejs",{row:users1}) %>
+    </div>
+  </body>
+</html>

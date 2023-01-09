@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="csrf-token" content="<%= csrfToken %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MY_ONLINE_VOTING_APPLICATION</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="grid grid-cols-6">
+      <div class="col-span-2 col-start-3">
+        
+
+        <p class="py-2 font-bold text-2xl px-5"> Hello! Welcome to VOTE ONLINE</p>
+        <div class="border border-orange-300  py-5 mt-8 bg-orange-200 rounded-lg">
+        <p class="py-2 px-20">
+          New User ?
+         
+        </p>
+        <a href="/signup" class=" text-green-600 px-20"> Sign Up</a>
+        <p class="py-2 px-20">
+          Already have an account ?
+          
+        </p>
+        <a href="/login" class=" text-green-600 px-20">Sign in</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

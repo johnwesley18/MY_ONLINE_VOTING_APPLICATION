@@ -1,0 +1,16 @@
+<div><ul class="list-none">
+    <% for(var i=0; i<row.length; i++) {%>
+      <li class="election-Item">
+        <div class="flex items-center w-full border border-black-900  w-full p-1 my-2 px-1 py-3 rounded hover:bg-purple-50">
+            
+              <label class="ml-1  text-2xl w-full text-black-600 cursor-pointer">
+                <%= row[i].email%>
+              </label>
+              <label class="ml-1  text-2xl w-full text-black-600 cursor-pointer">
+                <%= row[i].Password%>
+              </label>
+            </div>
+            
+      </li>
+      <% } %>
+  </ul></div>

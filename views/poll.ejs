@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <%- include('head.ejs') %>
+    <div> <a href="new"><centre></centre><button  class="rounded bg-lime-600 h-10 text-center px-5 mt-2 text-2xl text-right " >Create a new election</button></centre></a></div>
+    <div class="p-8">
+        <%- include('data1.ejs',{row:Election}) %>
+    </div>
+</body>
+</html>

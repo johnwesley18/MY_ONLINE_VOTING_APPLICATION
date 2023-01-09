@@ -1,0 +1,13 @@
+<div><ul class="list-none">
+    <% for(var i=0; i<row.length; i++) {%>
+      <li class="election-Item">
+        <div class="flex items-center w-full border border-black-900  w-80 ml-10 p-1 my-2 px-10 py-3 rounded hover:bg-purple-50">
+            
+              <label class="ml-1  text-2xl w-full text-black-600 cursor-pointer">
+                <%= row[i].title%>
+              </label>
+            </div>
+    <div> <a href="/voters/<%=row[i].id%>"><button class="rounded bg-lime-600 h-10 ml-10 px-5 mt-2 text-2xl ">VIEW POLL</button></a></div>
+      </li>
+      <% } %>
+  </ul></div>
